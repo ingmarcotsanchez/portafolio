@@ -4,7 +4,7 @@
   <label class="sidebar-label pd-x-15 mg-t-20">Menu</label>
   <div class="br-sideleft-menu">
 
-    <a href="../UsuHome/" class="br-menu-link">
+    <a href="inicio.php" class="br-menu-link">
       <div class="br-menu-item">
         <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
         <span class="menu-item-label">Inicio</span>
@@ -13,35 +13,35 @@
 
 
 
-    <a href="../UsuCurso/" class="br-menu-link">
+    <a href="mntEstudios" class="br-menu-link">
       <div class="br-menu-item">
         <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-24"></i>
         <span class="menu-item-label">Mis Estudios</span>
       </div>
     </a>
 
-    <a href="../AdminMntUsuario/" class="br-menu-link">
+    <a href="mntExperiencia" class="br-menu-link">
       <div class="br-menu-item">
         <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-24"></i>
         <span class="menu-item-label">Mi Experiencia</span>
       </div>
     </a>
 
-    <a href="../AdminMntCurso/" class="br-menu-link">
+    <a href="mntTrabajos" class="br-menu-link">
       <div class="br-menu-item">
         <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-24"></i>
         <span class="menu-item-label">Mis Trabajos</span>
       </div>
     </a>
 
-    <a href="../AdminMntInstructor/" class="br-menu-link">
+    <a href="mntHabilidades" class="br-menu-link">
       <div class="br-menu-item">
         <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-24"></i>
         <span class="menu-item-label">Mis Habilidades</span>
       </div>
     </a>
   
-    <a href="../UsuPerfil/" class="br-menu-link">
+    <a href="perfil" class="br-menu-link">
       <div class="br-menu-item">
         <i class="menu-item-icon icon ion-ios-gear-outline tx-20"></i>
         <span class="menu-item-label">Perfil</span>
