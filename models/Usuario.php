@@ -105,7 +105,7 @@
         public function delete_usuario($usu_id){
             $conectar= parent::conexion();
             parent::set_names();
-            $sql="UPDATE tm_usuario
+            $sql="UPDATE usuarios
                 SET
                     est = 0
                 WHERE

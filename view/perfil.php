@@ -53,7 +53,7 @@
                   <input class="form-control" type="text" name="usu_apem" id="usu_apem" placeholder="Apellido Materno">
                 </div>
               </div>
-              <div class="col-lg-6">
+              <div class="col-lg-12">
                 <div class="form-group">
                   <label class="form-control-label">Correo Electronico: <span class="tx-danger">*</span></label>
                   <input class="form-control" type="text" name="usu_correo" id="usu_correo" readonly>
@@ -63,6 +63,12 @@
                 <div class="form-group">
                   <label class="form-control-label">Contraseña: <span class="tx-danger">*</span></label>
                   <input class="form-control" type="text" name="usu_pass" id="usu_pass" placeholder="Ingrese Contraseña">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label class="form-control-label">Celular: <span class="tx-danger">*</span></label>
+                  <input class="form-control" type="text" name="usu_telf" id="usu_telf" placeholder="Ingrese Celular">
                 </div>
               </div>
             </div>

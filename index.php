@@ -1,3 +1,16 @@
+<?php require_once("config/conexion.php");?>
+<?php 
+    require_once("models/Usuario.php");
+    $usuario = new Usuario();
+    $usu = $usuario->get_usuario();
+
+    require_once("models/Social_Media.php");
+    $social = new SocialMedia();
+    $soc = $social->get_socialMedia();
+    //print_r($soc);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,10 +54,13 @@
             </div>
         </div>
         <div class="home-social"><!--social_media-->
-            <a href="#"><i class='bx bxl-linkedin'></i></a>
-            <a href="#"><i class='bx bxl-gmail'></i></a>
-            <a href="#"><i class='bx bxl-whatsapp'></i></a>
-            <a href="#"><i class='bx bxl-github'></i></a>
+            <?php
+                for($i=0;$i<sizeof($soc);$i++):
+            ?>
+            <a href="#"><i class='bx bxl-<?php echo $soc[$i]["socmed_icono"] ?>'></i></a>
+            <?php
+                endfor;
+            ?>
         </div>
         <div class="home-img"></div>
     </section>
@@ -66,13 +82,13 @@
                             <b>Email</b>ing.marcotsanchez@gmail.com
                         </li>
                         <li>
-                            <b>Website</b>www.pendiente.co
-                        </li>
-                        <li>
                             <b>Dirección</b>Reserva de Peñalisa Creta
                         </li>
                         <li>
                             <b>Cargo Actual:</b>Profesor
+                        </li>
+                        <li>
+                            <b>Cvlac</b><a href="#" class="cvlac" download="document/CV.pdf"><i class='bx bx-download'></i>Ver más</a>
                         </li>
                     </ul>
                 </div>

@@ -21,6 +21,10 @@ html {
   font-family: "Raleway", sans-serif;
 }
 
+a.cvlac {
+  color: #fff;
+}
+
 body {
   background-color: #191b32;
   color: #ededed;
@@ -51,6 +55,10 @@ body {
   border-radius: 6px;
   color: #fff;
   font-size: 1rem;
+}
+.btn-form:hover {
+  background-color: #fff;
+  color: #1cb698;
 }
 
 .header {
@@ -615,146 +623,146 @@ section {
   padding: 0 9%;
 }
 
-  .work-filters {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    -moz-column-gap: 0.75rem;
-        column-gap: 0.75rem;
-    margin-bottom: 1rem;
-  }
-  .work-filters .work-item {
-    cursor: pointer;
-    color: #ededed;
-    padding: 0.25rem 0.75rem;
-    font-weight: 700;
-    border-radius: 0.5rem;
-    font-family: "Roboto", sans-serif;
-  }
+.work-filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 0.75rem;
+       column-gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.work-filters .work-item {
+  cursor: pointer;
+  color: #ededed;
+  padding: 0.25rem 0.75rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  font-family: "Roboto", sans-serif;
+}
 
-  .active-work {
-    background-color: #1cb698;
-    color: #fff;
-  }
+.active-work {
+  background-color: #1cb698;
+  color: #fff;
+}
 
-  .work-container {
-    display: grid;
-    grid-template-columns: repeat(3, 330px);
-    gap: 1.8rem;
-    justify-content: center;
-    padding-top: 1.5rem;
-  }
-  .work-container .work-card {
-    background-color: #112342;
-    padding: 1.25rem;
-    border-radius: 0.5rem;
-  }
-  .work-container .work-card .work-img {
-    border-radius: 0.5rem;
-    margin-bottom: 10px;
-  }
-  .work-container .work-card .work-title {
-    font-family: "Roboto", sans-serif;
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-  }
-  .work-container .work-card .work-button {
-    font-family: "Raleway", sans-serif;
-    color: #1cb698;
-    display: flex;
-    align-items: center;
-    -moz-column-gap: 0.25rem;
-        column-gap: 0.25rem;
-    cursor: pointer;
-  }
-  .work-container .work-card .work-button .work-button-icon {
-    font-size: 1rem;
-    transition: 0.3s;
-  }
-  .work-container .work-card .work-button:hover .work-button-icon {
-    transform: translateX(0.25rem);
-  }
-  .work-container .work-card .portfolio-item-details {
-    display: none;
-  }
+.work-container {
+  display: grid;
+  grid-template-columns: repeat(3, 330px);
+  gap: 1.8rem;
+  justify-content: center;
+  padding-top: 1.5rem;
+}
+.work-container .work-card {
+  background-color: #112342;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+}
+.work-container .work-card .work-img {
+  border-radius: 0.5rem;
+  margin-bottom: 10px;
+}
+.work-container .work-card .work-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+.work-container .work-card .work-button {
+  font-family: "Raleway", sans-serif;
+  color: #1cb698;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 0.25rem;
+       column-gap: 0.25rem;
+  cursor: pointer;
+}
+.work-container .work-card .work-button .work-button-icon {
+  font-size: 1rem;
+  transition: 0.3s;
+}
+.work-container .work-card .work-button:hover .work-button-icon {
+  transform: translateX(0.25rem);
+}
+.work-container .work-card .portfolio-item-details {
+  display: none;
+}
 
-  .portfolio-popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 1rem;
-    z-index: 200;
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.3s;
-  }
+.portfolio-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
 
-  .portfolio-popup.open {
-    opacity: 1;
-    visibility: visible;
-  }
+.portfolio-popup.open {
+  opacity: 1;
+  visibility: visible;
+}
 
-  .portfolio-popup-inner {
-    width: 900px;
-    border-radius: 0.5rem;
-    background-color: #191b32;
-    padding: 2.5rem;
-    position: relative;
-  }
+.portfolio-popup-inner {
+  width: 900px;
+  border-radius: 0.5rem;
+  background-color: #191b32;
+  padding: 2.5rem;
+  position: relative;
+}
 
-  .portfolio-popup-content {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    -moz-column-gap: 3rem;
-        column-gap: 3rem;
-  }
+.portfolio-popup-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  -moz-column-gap: 3rem;
+       column-gap: 3rem;
+}
 
-  .portfolio-popup-close {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    font-size: 1.5rem;
-    color: #1cb698;
-    cursor: pointer;
-  }
+.portfolio-popup-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  color: #1cb698;
+  cursor: pointer;
+}
 
-  .portfolio-popup-img {
-    border-radius: 0.5rem;
-  }
+.portfolio-popup-img {
+  border-radius: 0.5rem;
+}
 
-  .portfolio-popup-subtitle {
-    color: #ededed;
-    font-family: "Raleway", sans-serif;
-  }
+.portfolio-popup-subtitle {
+  color: #ededed;
+  font-family: "Raleway", sans-serif;
+}
 
-  .details-title {
-    font-family: "Roboto", sans-serif;
-    margin-bottom: 1rem;
-    color: #1cb698;
-  }
+.details-title {
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 1rem;
+  color: #1cb698;
+}
 
-  .details-description {
-    font-family: "Raleway", sans-serif;
-    margin-bottom: 1rem;
-  }
+.details-description {
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 1rem;
+}
 
-  .details-info {
-    list-style: none;
-  }
-  .details-info li {
-    margin-bottom: 0.5rem;
-    font-family: "Roboto", sans-serif;
-  }
-  .details-info span {
-    font-family: "Raleway", sans-serif;
-  }
+.details-info {
+  list-style: none;
+}
+.details-info li {
+  margin-bottom: 0.5rem;
+  font-family: "Roboto", sans-serif;
+}
+.details-info span {
+  font-family: "Raleway", sans-serif;
+}
 
 .contact {
   background-color: #112342;
