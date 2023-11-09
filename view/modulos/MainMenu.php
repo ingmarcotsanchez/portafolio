@@ -13,35 +13,35 @@
 
 
 
-    <a href="mntEstudios" class="br-menu-link">
+    <a href="mntEstudios.php" class="br-menu-link">
       <div class="br-menu-item">
         <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-24"></i>
         <span class="menu-item-label">Mis Estudios</span>
       </div>
     </a>
 
-    <a href="mntExperiencia" class="br-menu-link">
+    <a href="mntExperiencias.php" class="br-menu-link">
       <div class="br-menu-item">
         <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-24"></i>
         <span class="menu-item-label">Mi Experiencia</span>
       </div>
     </a>
 
-    <a href="mntTrabajos" class="br-menu-link">
+    <a href="mntTrabajos.php" class="br-menu-link">
       <div class="br-menu-item">
         <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-24"></i>
         <span class="menu-item-label">Mis Trabajos</span>
       </div>
     </a>
 
-    <a href="mntHabilidades" class="br-menu-link">
+    <a href="mntHabilidades.php" class="br-menu-link">
       <div class="br-menu-item">
         <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-24"></i>
         <span class="menu-item-label">Mis Habilidades</span>
       </div>
     </a>
   
-    <a href="perfil" class="br-menu-link">
+    <a href="perfil.php" class="br-menu-link">
       <div class="br-menu-item">
         <i class="menu-item-icon icon ion-ios-gear-outline tx-20"></i>
         <span class="menu-item-label">Perfil</span>
