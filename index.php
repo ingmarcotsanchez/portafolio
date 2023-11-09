@@ -8,6 +8,10 @@
     $social = new SocialMedia();
     $soc = $social->get_socialMedia();
     //print_r($soc);
+
+    require_once("models/Work.php");
+    $work = new Work();
+    $wk = $work->get_work();
 ?>
 
 
@@ -398,23 +402,30 @@
             <span class="work-item" data-filter=".software">Software</span>
         </div>
         <div class="work-container">
-            <div class="work-card mix design">
-                <img src="" alt="" class="work-img">
-                <h3 class="work-title">Lorem ipsum</h3>
+            <?php
+                for($i=0;$i<sizeof($wk);$i++):
+            ?>
+            
+            <div class="work-card mix <?php echo $wk[$i]["fil_id"] ?>design">
+                <img src="public/images/<?php echo $wk[$i]["work_img"] ?>" alt="imagen" class="work-img">
+                <h3 class="work-title"><?php echo $wk[$i]["work_titulo"] ?></h3>
                 <span class="work-button">Demo
                     <i class='bx bx-right-arrow-alt work-button-icon'></i>
                 </span>
                 <div class="portfolio-item-details">
-                    <h3 class="details-title">Lorem ipsum dolor1</h3>
-                    <p class="details-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptatibus doloremque iste.</p>
+                    <h3 class="details-title"><?php echo $wk[$i]["work_titulo"] ?></h3>
+                    <p class="details-description"><?php echo $wk[$i]["work_descripcion"] ?>.</p>
                     <ul class="details-info">
-                        <li>Fecha - <span>Junio 2023</span></li>
-                        <li>Rol - <span>Diseñador</span></li>
-                        <li>Tecnología - <span>HTML - CSS</span></li>
+                        <li>Fecha - <span><?php echo $wk[$i]["work_fecha"] ?></span></li>
+                        <li>Rol - <span><?php echo $wk[$i]["work_rol"] ?></span></li>
+                        <li>Tecnología - <span><?php echo $wk[$i]["work_tecnologia"] ?></span></li>
                     </ul>
                 </div>
             </div>
-
+            <?php
+                endfor;
+            ?>
+            <!--
             <div class="work-card mix design">
                 <img src="" alt="" class="work-img">
                 <h3 class="work-title">Lorem ipsum</h3>
@@ -499,6 +510,7 @@
                     </ul>
                 </div>
             </div>
+            -->
         </div>
     </section>
     <!-- Portfolio popup -->
