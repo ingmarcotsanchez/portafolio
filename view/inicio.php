@@ -1,18 +1,18 @@
 <?php
   /* Llamamos al archivo de conexion.php */
-  require_once("../../config/conexion.php");
-  if(isset($_SESSION["usu_id"])){
+  require_once("../config/conexion.php");
+  if(isset($_SESSION["usu_id"])):
 ?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <?php require_once("../html/MainHead.php"); ?>
+    <?php require_once("modulos/MainHead.php"); ?>
     <title>Empresa::Home</title>
   </head>
 
   <body>
-    <?php require_once("../html/MainMenu.php"); ?>
-    <?php require_once("../html/MainHeader.php"); ?>
+    <?php require_once("modulos/MainMenu.php"); ?>
+    <?php require_once("modulos/MainHeader.php"); ?>
     <div class="br-mainpanel">
       <div class="br-pageheader pd-y-15 pd-l-20">
         <nav class="breadcrumb pd-0 mg-0 tx-12">
@@ -77,13 +77,13 @@
 
       </div>
     </div>
-    <?php require_once("../html/MainJs.php"); ?>
-    <script type="text/javascript" src="usuhome.js"></script>
+    <?php require_once("modulos/MainJs.php"); ?>
+    <script type="text/javascript" src="js/inicio.js"></script>
   </body>
 </html>
 <?php
-  }else{
+  else:
     /* Si no a iniciado sesion se redireccionada a la ventana principal */
     header("Location:".Conectar::ruta()."view/404/");
-  }
 ?>
+<?php endif; ?>

@@ -10,10 +10,10 @@
                 $pass = $_POST["usu_pass"];
                 if(empty($correo) and empty($pass)){
                     /*TODO: En caso esten vacios correo y contraseña, devolver al index con mensaje = 2 */
-                    header("Location:".conectar::ruta()."index.php?m=2");
+                    header("Location:".conectar::ruta()."login.php?m=2");
 					exit();
                 }else{
-                    $sql = "SELECT * FROM tm_usuario WHERE usu_correo=? and usu_pass=? and est=1";
+                    $sql = "SELECT * FROM usuarios WHERE usu_correo=? and usu_pass=? and est=1";
                     $stmt=$conectar->prepare($sql);
                     $stmt->bindValue(1, $correo);
                     $stmt->bindValue(2, $pass);
@@ -24,13 +24,12 @@
                         $_SESSION["usu_nom"]=$resultado["usu_nom"];
                         $_SESSION["usu_ape"]=$resultado["usu_ape"];
                         $_SESSION["usu_correo"]=$resultado["usu_correo"];
-                        $_SESSION["rol_id"]=$resultado["rol_id"];
                         /*TODO: Si todo esta correcto indexar en home */
-                        header("Location:".Conectar::ruta()."view/UsuHome/");
+                        header("Location:".Conectar::ruta()."view/inicio.php");
                         exit();
                     }else{
                         /*TODO: En caso no coincidan el usuario o la contraseña */
-                        header("Location:".conectar::ruta()."index.php?m=1");
+                        header("Location:".conectar::ruta()."login.php?m=1");
                         exit();
                     }
                 }
