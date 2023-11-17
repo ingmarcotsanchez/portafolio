@@ -1,10 +1,21 @@
 <?php
     class SocialMedia extends Conectar{
+        
         public function get_socialMedia(){
             $social = parent::conexion();
             parent::set_names();
             $sql="SELECT * FROM social_media WHERE est=1";
             $sql=$social->prepare($sql);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+        }
+
+        public function get_socialMediaXid($socmed_id){
+            $social = parent::conexion();
+            parent::set_names();
+            $sql="SELECT * FROM social_media WHERE est=1 AND socmed_id=?";
+            $sql=$social->prepare($sql);
+            $sql->bindValue(1,$socmed_id);
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
@@ -23,7 +34,7 @@
         public function update_socialMedia($socmed_id,$socmed_icono,$socmed_url){
             $social = parent::conexion();
             parent::set_names();
-            $sql="UPDATE usuarios 
+            $sql="UPDATE social_media 
                     SET
                         socmed_icono = ?,
                         socmed_url = ?
@@ -40,7 +51,7 @@
         public function delete_socialMedia($socmed_id){
             $social = parent::conexion();
             parent::set_names();
-            $sql = "UPDATE usuarios SET est = 0 WHERE socmed_id=?";
+            $sql = "UPDATE social_media SET est = 0 WHERE socmed_id=?";
             $sql=$social->prepare($sql);
             $sql->bindValue(1,$socmed_id);
             $sql->execute();

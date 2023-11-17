@@ -11,7 +11,12 @@
       </div>
     </a>
 
-
+    <a href="mntSocialMedia.php" class="br-menu-link">
+      <div class="br-menu-item">
+        <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-24"></i>
+        <span class="menu-item-label">Mis Redes Sociales</span>
+      </div>
+    </a>
 
     <a href="mntEstudios.php" class="br-menu-link">
       <div class="br-menu-item">
