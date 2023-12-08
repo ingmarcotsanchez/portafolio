@@ -130,7 +130,7 @@
         public function get_usuario_x_id($usu_id){
             $conectar= parent::conexion();
             parent::set_names();
-            $sql="SELECT * FROM tm_usuario WHERE est=1 AND usu_id=?";
+            $sql="SELECT * FROM usuarios WHERE est=1 AND usu_id=?";
             $sql=$conectar->prepare($sql);
             $sql->bindValue(1, $usu_id);
             $sql->execute();

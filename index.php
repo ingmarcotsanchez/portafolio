@@ -24,11 +24,11 @@
     <link rel="stylesheet" href="public/sass/style.css">
     <!-- Iconos -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
 </head>
 <body>
     <header class="header">
-        <a href="#" class="logo">Marco Sánchez E <span class="animate" style="--i:1"></span></a>
+        <a href="#" class="logo">Marco Sánchez<span class="animate" style="--i:1"></span></a>
         <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2"></span></div>
         <nav class="navbar">
             <a href="#home" class="active">Inicio</a>
@@ -41,15 +41,12 @@
             <a href="login.php" class="btn-form">Admon</a>
 
             <span class="active-nav"></span>
-            <span class="animate" style="--i:2"></span>
         </nav>
     </header>
     <section class="home show-animate" id="home">
         <div class="home-content">
             <h1 >Hola, Mi nombre es <span>Marco Sánchez Espinosa</span></h1>
-            <div class="text-animate">
-                <h3>Frontend</h3>
-            </div>
+    
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni optio, explicabo inventore ipsum iusto adipisci commodi iste corrupti maxime quidem placeat voluptate odio quis molestiae, itaque aperiam cupiditate veritatis quos.
             Cupiditate reprehenderit totam non error eveniet.</p>
             <div class="btn-box">
@@ -194,6 +191,16 @@
                                 <span class="skills-percentage" style="width: 40%;"></span>
                             </div>
                         </div>
+                        <div class="skills-data">
+                            <div class="skills-titles">
+                                <h3 class="skills-name">BOOSTRAP</h3>
+                                <span class="skills-number">80%</span>
+                            </div>
+
+                            <div class="skills-bar">
+                                <span class="skills-percentage" style="width: 80%;"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -253,6 +260,36 @@
 
                             <div class="skills-bar">
                                 <span class="skills-percentage" style="width: 90%;"></span>
+                            </div>
+                        </div>
+                        <div class="skills-data">
+                            <div class="skills-titles">
+                                <h3 class="skills-name">MariaDB</h3>
+                                <span class="skills-number">90%</span>
+                            </div>
+
+                            <div class="skills-bar">
+                                <span class="skills-percentage" style="width: 90%;"></span>
+                            </div>
+                        </div>
+                        <div class="skills-data">
+                            <div class="skills-titles">
+                                <h3 class="skills-name">PostgresSQL</h3>
+                                <span class="skills-number">90%</span>
+                            </div>
+
+                            <div class="skills-bar">
+                                <span class="skills-percentage" style="width: 90%;"></span>
+                            </div>
+                        </div>
+                        <div class="skills-data">
+                            <div class="skills-titles">
+                                <h3 class="skills-name">ORACLE</h3>
+                                <span class="skills-number">40%</span>
+                            </div>
+
+                            <div class="skills-bar">
+                                <span class="skills-percentage" style="width: 40%;"></span>
                             </div>
                         </div>
                     </div>
@@ -539,62 +576,30 @@
         </div>
     </div>
     <section class="contact" id="contact">
-        <h2 class="heading">Contactá<span>me!</span></h2>
+        <h2 class="heading">Agendar <span>Reunión!</span></h2>
         <div class="contact-container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <i class='bx bx-envelope contact-card-icon'></i>
-                        <h3 class="contact-card-title">Email</h3>
-                        <span class="contact-card-data">marcotsancheze@gmail.com</span>
-                        <span class="contact-button">
-                            Escribemé <i class='bx bx-edit-alt contact-button-icon'></i>
-                        </span>
-                    </div>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <i class='bx bx-envelope contact-card-icon'></i>
+                    <h3 class="contact-card-title">Email</h3>
+                    <span class="contact-card-data">marcotsancheze@gmail.com</span>
+                    <span class="contact-button">
+                        Escribemé <i class='bx bx-edit-alt contact-button-icon'></i>
+                    </span>
+                </div>
 
-                    <div class="contact-card">
-                        <i class='bx bxl-whatsapp contact-card-icon'></i>
-                        <h3 class="contact-card-title">Whatsapp</h3>
-                        <span class="contact-card-data">(+57) 3214614550</span>
-                        <span class="contact-button">
-                            Escribemé <i class='bx bx-edit-alt contact-button-icon'></i>
-                        </span>
-                    </div>
-
-                    <div class="contact-card">
-                        <i class='bx bx-envelope contact-card-icon'></i>
-                        <h3 class="contact-card-title">Email</h3>
-                        <span class="contact-card-data">marcotsancheze@gmail.com</span>
-                        <span class="contact-button">
-                            Escribemé <i class='bx bx-edit-alt contact-button-icon'></i>
-                        </span>
-                    </div>
+                <div class="contact-card">
+                    <i class='bx bxl-whatsapp contact-card-icon'></i>
+                    <h3 class="contact-card-title">Whatsapp</h3>
+                    <span class="contact-card-data">(+57) 3214614550</span>
+                    <span class="contact-button">
+                        Escribemé <i class='bx bx-edit-alt contact-button-icon'></i>
+                    </span>
                 </div>
             </div>
+     
             <div class="contact-content">
-                <form class="contact-form">
-                    <div class="input-container">
-                        <input type="text" class="input" id="nombre">
-                        <label for="nombre">Nombre Completo</label>
-                        <span>Nombre Completo</span>
-                    </div>
-                    <div class="input-container">
-                        <input type="email" class="input" id="email">
-                        <label for="email">Email</label>
-                        <span>Email</span>
-                    </div>
-                    <div class="input-container">
-                        <input type="tel" class="input" id="phone">
-                        <label for="phone">Celular</label>
-                        <span>Celular</span>
-                    </div>
-                    <div class="input-container textarea">
-                        <textarea class="input" name="" id="mensaje"></textarea>
-                        <label for="mensaje">Mensaje</label>
-                        <span>Mensaje</span>
-                    </div>
-                    <button type="submit" class="btn-form"><i class='bx bx-paper-plane'></i> Enviar</button>
-                </form>
+               
             </div>
         </div>
     </section>
@@ -607,6 +612,7 @@
         </div>
     </footer>
     <script src="public/js/mixitup.min.js"></script>
+    <script src="public/js/fullcalendar.js"></script>
     <script src="public/js/script.js"></script>
 </body>
 </html>

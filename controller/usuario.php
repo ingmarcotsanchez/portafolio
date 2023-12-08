@@ -7,7 +7,7 @@
     $usuario = new Usuario();
 
     /*TODO: Opcion de solicitud de controller */
-    switch($_GET["op"]){
+    switch($_GET["opc"]){
 
 
         /*TODO: Mostrar informacion del usuario en la vista perfil */
