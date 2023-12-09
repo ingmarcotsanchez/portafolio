@@ -3,7 +3,7 @@
         public function get_curriculum(){
             $conectar = parent::conexion();
             parent::set_names();
-            $sql = "SELECT * FROM estudios WHERE est=1";
+            $sql = "SELECT * FROM estudios WHERE est=1 ORDER BY est_anno DESC";
             $sql = $conectar->prepare($sql);
             $sql->execute();
             return $resultado=$sql->fetchAll();

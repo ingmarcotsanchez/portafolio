@@ -29,7 +29,8 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label">Tipo: <span class="tx-danger">*</span></label>
-                            <select class="form-control select2" style="width:100%" name="est_tipo" id="est_tipo" data-placeholder="Seleccione">
+                            <select class="form-control" style="width:100%" name="est_tipo" id="est_tipo" data-placeholder="Seleccione">
+                                <option value="S">Seleccione</option>
                                 <option value="E">Educación</option>
                                 <option value="C">Curso</option>
                             </select>

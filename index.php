@@ -12,6 +12,10 @@
     require_once("models/Work.php");
     $work = new Work();
     $wk = $work->get_work();
+
+    require_once("models/Estudio.php");
+    $estudio = new Estudio();
+    $cur = $estudio->get_curriculum();
 ?>
 
 
@@ -304,74 +308,37 @@
             <div class="content-row">
                 <div class="content-col education">
                     <h3 class="title">Educación</h3>
+                    <?php
+                        for($i=0;$i<sizeof($cur);$i++):
+                    ?>
+                    <?php if($cur[$i]["est_tipo"] == "E"): ?>
                     <div class="item izq">
-                        <h4>Master en Dirección e Ingeniería de sitios web</h4>
-                        <span class="lugar">UNIR</span>
-                        <span class="fecha">2020</span>
+                        <h4><?php echo $cur[$i]["est_titulo"] ?></h4>
+                        <span class="lugar"><?php echo $cur[$i]["est_lugar"] ?></span>
+                        <span class="fecha"><?php echo $cur[$i]["est_anno"] ?></span>
                         <div class="conectori">
                             <div class="circuloi"></div>
                         </div>
                     </div>
-                    <div class="item izq">
-                        <h4>Master en E-Learning y Redes Sociales</h4>
-                        <span class="lugar">UNIR</span>
-                        <span class="fecha">2019</span>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
-                        </div>
-                    </div>
-                    <div class="item izq">
-                        <h4>Ingeniero de Sistemas</h4>
-                        <span class="lugar">Universidad Piloto</span>
-                        <span class="fecha">2009</span>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
-                        </div>
-                    </div>
-                  
+                    <?php endif; ?>
+                    <?php endfor; ?>
                 </div>
                 <div class="content-col educationContinua">
                     <h3 class="title">Cursos</h3>
+                    <?php
+                        for($i=0;$i<sizeof($cur);$i++):
+                    ?>
+                    <?php if($cur[$i]["est_tipo"] == "C"): ?>
                     <div class="item der">
-                        <h4>Figma Básico</h4>
-                        <span class="lugar">Platzi</span>
-                        <span class="fecha">2022</span>
+                    <h4><?php echo $cur[$i]["est_titulo"] ?></h4>
+                        <span class="lugar"><?php echo $cur[$i]["est_lugar"] ?></span>
+                        <span class="fecha"><?php echo $cur[$i]["est_anno"] ?></span>
                         <div class="conectord">
                             <div class="circulod"></div>
                         </div>
                     </div>
-                    <div class="item der">
-                        <h4>Power BI Básico</h4>
-                        <span class="lugar">Universidad Minuto</span>
-                        <span class="fecha">2022</span>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
-                    </div>
-                    <div class="item der">
-                        <h4>Curso Intensivo en Web Front End</h4>
-                        <span class="lugar">NextU</span>
-                        <span class="fecha">2021</span>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
-                    </div>
-                    <div class="item der">
-                        <h4>Herramientas de Bussiness Intelligence</h4>
-                        <span class="lugar">Universidad Galileo</span>
-                        <span class="fecha">2020</span>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
-                    </div>
-                    <div class="item der">
-                        <h4>Certificación Internacional en Big Data</h4>
-                        <span class="lugar">Exacom IT</span>
-                        <span class="fecha">2020</span>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
-                    </div>
+                    <?php endif; ?>
+                    <?php endfor; ?>
                 </div>
             </div>
         </div>
