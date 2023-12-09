@@ -7,7 +7,7 @@
             <!-- Formulario Mantenimiento -->
             <form method="post" id="socialMedia_form">
                 <div class="modal-body">
-                    <input type="text" name="socmed_id" id="socmed_id">
+                    <input type="hidden" name="socmed_id" id="socmed_id">
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label">Icono: <span class="tx-danger">*</span></label>

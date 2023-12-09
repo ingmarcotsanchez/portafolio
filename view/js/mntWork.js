@@ -35,6 +35,11 @@ function guardaryeditar(e){
 }
 
 $(document).ready(function(){
+    $('#fil_id').select2({
+        dropdownParent: $("#modalcrearWorks")
+    });
+
+    select_filtro();
 
     $('#work_data').DataTable({
         "aProcessing": true,
@@ -83,7 +88,7 @@ $(document).ready(function(){
 
 function nuevo(){
     $('#titulo_modal').html('Nuevo Trabajo');
-    $('#work_form')[0].reset();
+    $('#Work_form')[0].reset();
     $('#modalcrearWorks').modal('show');
 }
 
@@ -127,6 +132,12 @@ function eliminar(work_id){
         }
     });
 
+}
+
+function select_filtro(){
+    $.post("/Portafolio/controller/filtro.php?opc=combo",function (data){
+        $('#fil_id').html(data);
+    });
 }
 
 init();

@@ -7,7 +7,7 @@
             <!-- Formulario Mantenimiento -->
             <form method="post" id="Estudio_form">
                 <div class="modal-body">
-                    <input type="text" name="est_id" id="est_id">
+                    <input type="hidden" name="est_id" id="est_id">
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label">Titulo: <span class="tx-danger">*</span></label>

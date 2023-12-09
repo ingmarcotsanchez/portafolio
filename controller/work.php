@@ -15,10 +15,13 @@
             if(is_array($datos)==true and count($datos)<>0){
                 foreach($datos as $row){
                     $output["work_id"] = $row["work_id"];
-                    $output["est_titulo"] = $row["est_titulo"];
-                    $output["est_lugar"] = $row["est_lugar"];
-                    $output["est_anno"] = $row["est_anno"];
-                    $output["est_tipo"] = $row["est_tipo"];
+                    $output["fil_id"] = $row["fil_id"];
+                    $output["work_img"] = $row["work_img"];
+                    $output["work_titulo"] = $row["work_titulo"];
+                    $output["work_descripcion"] = $row["work_descripcion"];
+                    $output["work_fecha"] = $row["work_fecha"];
+                    $output["work_rol"] = $row["work_rol"];
+                    $output["work_tecnologia"] = $row["work_tecnologia"];
                 }
                 echo json_encode($output);
             }
@@ -26,7 +29,26 @@
         /*TODO: Guardar y editar cuando se tenga el ID */
         case "guardaryeditar":
             if(empty($_POST["work_id"])){
-                $work->insert_work($_POST["fil_id"],$_POST["work_img"],$_POST["work_titulo"],$_POST["work_descripcion"],$_POST["work_fecha"],$_POST["work_rol"],$_POST["work_tecnologia"]);
+                $tmp_dir = $_FILES['work_img']['tmp_name'];
+                $imgFile = $_FILES['work_img']['name'];
+                $imgSize = $_FILES['work_img']['size'];
+                $upload_dir = __DIR__.'/images/proyectos/';
+                $imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION));
+                $valid_extensions = array('jpeg', 'jpg', 'png');
+                $imagen = rand(1000,1000000).".".$imgExt;
+                if(in_array($imgExt, $valid_extensions)){
+                    // Check file size '5MB'
+                    if($imgSize < 5000000)    {
+                        var_dump(move_uploaded_file($tmp_dir,$upload_dir.$imagen));
+                        move_uploaded_file($tmp_dir,$upload_dir.$imagen);
+                    }
+                    else{
+                     $errMSG = "Sorry, your file is too large.";
+                    }
+                    if(!isset($errMSG)){
+                        $work->insert_work($_POST["fil_id"],$imagen,$_POST["work_titulo"],$_POST["work_descripcion"],$_POST["work_fecha"],$_POST["work_rol"],$_POST["work_tecnologia"]);
+                    }
+                }
             }else{
                 $work->update_work($_POST["work_id"],$_POST["fil_id"],$_POST["work_img"],$_POST["work_titulo"],$_POST["work_descripcion"],$_POST["work_fecha"],$_POST["work_rol"],$_POST["work_tecnologia"]);
             }
@@ -44,7 +66,16 @@
                 $sub_array[] = $row["fil_enlace"];
                 $sub_array[] = $row["work_titulo"];
                 $sub_array[] = $row["work_fecha"];
-                $sub_array[] = $row["work_rol"];
+                if($row["work_rol"] == "D"){
+                    $sub_array[] = "Diseñador";
+                }elseif($row["work_rol"] == "P"){
+                    $sub_array[] = "Programador";
+                }elseif($row["work_rol"] == "A"){
+                    $sub_array[] = "Diseñador y Programador";
+                }else{
+                    $sub_array[] = "Asesor";
+                }
+                
                 $sub_array[] = $row["work_tecnologia"];
                 
                 $sub_array[] = '<button type="button" onClick="editar('.$row["work_id"].');"  id="'.$row["work_id"].'"class="btn btn-outline-warning btn-icon"><div><i class="fa fa-edit"></i></div></button>';

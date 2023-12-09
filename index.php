@@ -409,7 +409,7 @@
             ?>
             
             <div class="work-card mix <?php echo $wk[$i]["fil_enlace"] ?>">
-                <img src="public/images/<?php echo $wk[$i]["work_img"] ?>" alt="imagen" class="work-img">
+                <img src="public/images/proyectos/<?php echo $wk[$i]["work_img"] ?>" alt="imagen" class="work-img">
                 <h3 class="work-title"><?php echo $wk[$i]["work_titulo"] ?></h3>
                 <span class="work-button">Demo
                     <i class='bx bx-right-arrow-alt work-button-icon'></i>
@@ -419,7 +419,17 @@
                     <p class="details-description"><?php echo $wk[$i]["work_descripcion"] ?>.</p>
                     <ul class="details-info">
                         <li>Fecha - <span><?php echo $wk[$i]["work_fecha"] ?></span></li>
-                        <li>Rol - <span><?php echo $wk[$i]["work_rol"] ?></span></li>
+                        <li>Rol - 
+                            <span>
+                            <?php 
+                                if ($wk[$i]["work_rol"] == "D"){
+                                    echo "Diseñador";
+                                } elseif($wk[$i]["work_rol"] == "P"){
+                                    echo "Programador";
+                                }
+                            ?>
+                            </span>
+                        </li>
                         <li>Tecnología - <span><?php echo $wk[$i]["work_tecnologia"] ?></span></li>
                     </ul>
                 </div>
@@ -438,7 +448,7 @@
                     <img src="" alt="" class="portfolio-popup-img">
                 </div>
                 <div class="portfolio-popup-info">
-                    <div class="portfolio-popup-subtitle">Featured - <span>Design</span></div>
+                    <div class="portfolio-popup-subtitle">Proyecto - <span>Design</span></div>
                     <div class="portfolio-popup-body">
                         <h3 class="details-title">Lorem ipsum dolor</h3>
                         <p class="details-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptatibus doloremque iste.</p>

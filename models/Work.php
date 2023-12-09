@@ -31,6 +31,30 @@
             return $resultado=$sql->fetchAll();
         }
 
+        public function get_worksXid($fil_id){
+            $social = parent::conexion();
+            parent::set_names();
+            $sql="SELECT
+            work.work_id,
+            filtros.fil_id,
+            filtros.fil_titulo,
+            filtros.fil_enlace,
+            work.work_img,
+            work.work_titulo,
+            work.work_descripcion,
+            work.work_fecha,
+            work.work_rol,
+            work.work_tecnologia,
+            work.est
+            FROM work
+            INNER JOIN filtros on work.fil_id = filtros.fil_id
+            WHERE work.fil_id = ?";
+            $sql=$social->prepare($sql);
+            $sql->bindValue(1,$fil_id);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+        }
+
         public function get_workXid($work_id){
             $social = parent::conexion();
             parent::set_names();
@@ -44,7 +68,7 @@
         public function insert_work($fil_id,$work_img,$work_titulo,$work_descripcion,$work_fecha,$work_rol,$work_tecnologia){
             $social = parent::conexion();
             parent::set_names();
-            $sql="INSERT INTO work (wor_id,fil_id,work_img,work_titulo,work_descripcion,work_fecha,work_rol,work_tecnologia,est) VALUES(NULL,?,?,?,?,?,?,?,1)";
+            $sql="INSERT INTO work (work_id,fil_id,work_img,work_titulo,work_descripcion,work_fecha,work_rol,work_tecnologia,est) VALUES(NULL,?,?,?,?,?,?,?,1)";
             $sql=$social->prepare($sql);
             $sql->bindValue(1, $fil_id);
             $sql->bindValue(2, $work_img);

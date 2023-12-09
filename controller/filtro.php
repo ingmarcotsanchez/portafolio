@@ -60,5 +60,15 @@
             echo json_encode($results);
             
             break;
+        case "combo":
+            $datos=$filtro->get_filter();
+            if(is_array($datos)==true and count($datos)>0){
+                $html= " <option label='Seleccione'></option>";
+                foreach($datos as $row){
+                    $html.= "<option value='".$row['fil_id']."'>".$row['fil_titulo']."</option>";
+                }
+                echo $html;
+            }
+            break;
         
     }
