@@ -11,11 +11,19 @@
 
     require_once("models/Work.php");
     $work = new Work();
-    $wk = $work->get_work();
+    $wk = $work->get_works();
 
     require_once("models/Estudio.php");
     $estudio = new Estudio();
     $cur = $estudio->get_curriculum();
+
+    require_once("models/Experiencia.php");
+    $experiencia = new Experiencia();
+    $exp = $experiencia->get_experience();
+
+    require_once("models/Filtro.php");
+    $filtro = new Filtro();
+    $fil = $filtro->get_filter();
 ?>
 
 
@@ -52,8 +60,7 @@
         <div class="home-content">
             <h1 >Hola, Mi nombre es <span>Marco Sánchez Espinosa</span></h1>
     
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni optio, explicabo inventore ipsum iusto adipisci commodi iste corrupti maxime quidem placeat voluptate odio quis molestiae, itaque aperiam cupiditate veritatis quos.
-            Cupiditate reprehenderit totam non error eveniet.</p>
+            <p>Soy una persona con más de 10 años de experiencia docente, me apaciona la parte FrontEnd, me gusta aprender diferentes temas en esta área para transmitirlas a mis estudiantes.</p>
             <div class="btn-box">
                 <a href="#" class="btn" download="document/CV.pdf"><i class='bx bx-download'></i> Download CV</a>
                 <a href="#" class="btn">Agendar cita</a>
@@ -75,7 +82,7 @@
     <section class="about" id="about">
         <div class="content-about">
             <h2 class="heading">Sobre <span>Mi</span></h2>
-            <p><span>Hola! </span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ducimus nemo unde nobis incidunt eum a? Cumque sunt recusandae repellat cupiditate reiciendis tempora dolorum beatae architecto ratione, quisquam illo placeat.</p>
+            <p><span>Hola! </span>A continuación pueden conocer mis intereses personales e información personal.</p>
             <div class="content">
                 <div class="info-personal">
                     <h3>Datos Personales</h3><!--info_personal-->
@@ -349,53 +356,37 @@
             <div class="experience-column">
                 <h3 class="title">Experiencia Académica</h3>
                 <div class="experience-box">
+                    <?php
+                        for($i=0;$i<sizeof($exp);$i++):
+                    ?>
+                    <?php if($exp[$i]["exp_tipo"] == "A"): ?>
                     <div class="experience-content">
                         <div class="content">
-                            <div class="year"><i class="bx bxs-calendar"> 2010 - Actualidad</i></div>
-                            <h3>Profesor Tiempo Completo</h3>
-                            <p>Universidad Minuto de Dios.</p>
+                            <div class="year"><i class="bx bxs-calendar"> <?php echo $exp[$i]["exp_annoIni"] ?> - <?php echo $exp[$i]["exp_annoFin"] ?></i></div>
+                            <h3><?php echo $exp[$i]["exp_titulo"] ?></h3>
+                            <p><?php echo $exp[$i]["exp_lugar"] ?></p>
                         </div>
                     </div>
-                    <div class="experience-content">
-                        <div class="content">
-                            <div class="year"><i class="bx bxs-calendar"> 2018 - 2019</i></div>
-                            <h3>Profesor Catedra</h3>
-                            <p>Universidad Piloto de Colombia.</p>
-                        </div>
-                    </div>
-                    <div class="experience-content">
-                        <div class="content">
-                            <div class="year"><i class="bx bxs-calendar"> 2008 - 2009</i></div>
-                            <h3>Profesor Catedra</h3>
-                            <p>Compu basic.</p>
-                        </div>
-                    </div>
+                    <?php endif; ?>
+                    <?php endfor; ?>
                 </div>
             </div>
             <div class="experience-column">
                 <h3 class="title">Experiencia Profesional</h3>
                 <div class="experience-box">
+                    <?php
+                        for($i=0;$i<sizeof($exp);$i++):
+                    ?>
+                    <?php if($exp[$i]["exp_tipo"] == "P"): ?>
                     <div class="experience-content">
                         <div class="content">
-                            <div class="year"><i class="bx bxs-calendar"> 2018 - Actualidad</i></div>
-                            <h3>Ingeniero de Soporte</h3>
-                            <p>Sistemas y Soluciones Integradas S.A.S.</p>
+                            <div class="year"><i class="bx bxs-calendar"> <?php echo $exp[$i]["exp_annoIni"] ?> - <?php echo $exp[$i]["exp_annoFin"] ?></i></div>
+                            <h3><?php echo $exp[$i]["exp_titulo"] ?></h3>
+                            <p><?php echo $exp[$i]["exp_lugar"] ?></p>
                         </div>
                     </div>
-                    <div class="experience-content">
-                        <div class="content">
-                            <div class="year"><i class="bx bxs-calendar"> 2020 - 2021</i></div>
-                            <h3>Coordinador de Tic</h3>
-                            <p>Superando y Educando S.A.S.</p>
-                        </div>
-                    </div>
-                    <div class="experience-content">
-                        <div class="content">
-                            <div class="year"><i class="bx bxs-calendar"> 2010 - Actualidad</i></div>
-                            <h3>Profesor Tiempo Completo</h3>
-                            <p>Universidad Minuto de Dios.</p>
-                        </div>
-                    </div>
+                    <?php endif; ?>
+                    <?php endfor; ?>
                 </div>
             </div>
         </div>
@@ -404,16 +395,20 @@
         <h2 class="heading">Mis <span>Trabajos</span></h2>
         <div class="work-filters"><!--filtros-->
             <span class="work-item active-work" data-filter="all">All</span>
-            <span class="work-item" data-filter=".design">Diseños</span>
-            <span class="work-item" data-filter=".web">Web</span>
-            <span class="work-item" data-filter=".software">Software</span>
+            <?php
+                for($i=0;$i<sizeof($fil);$i++):
+            ?>
+            <span class="work-item" data-filter=".<?php echo $fil[$i]["fil_enlace"] ?>"><?php echo $fil[$i]["fil_titulo"] ?></span>
+            <?php
+                endfor;
+            ?>
         </div>
         <div class="work-container">
             <?php
                 for($i=0;$i<sizeof($wk);$i++):
             ?>
             
-            <div class="work-card mix <?php echo $wk[$i]["fil_id"] ?>design">
+            <div class="work-card mix <?php echo $wk[$i]["fil_enlace"] ?>">
                 <img src="public/images/<?php echo $wk[$i]["work_img"] ?>" alt="imagen" class="work-img">
                 <h3 class="work-title"><?php echo $wk[$i]["work_titulo"] ?></h3>
                 <span class="work-button">Demo
@@ -432,92 +427,6 @@
             <?php
                 endfor;
             ?>
-            <!--
-            <div class="work-card mix design">
-                <img src="" alt="" class="work-img">
-                <h3 class="work-title">Lorem ipsum</h3>
-                <span class="work-button">Demo
-                    <i class='bx bx-right-arrow-alt work-button-icon'></i>
-                </span>
-                <div class="portfolio-item-details">
-                    <h3 class="details-title">Lorem ipsum dolor2</h3>
-                    <p class="details-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptatibus doloremque iste.</p>
-                    <ul class="details-info">
-                        <li>Fecha - <span>Junio 2023</span></li>
-                        <li>Rol - <span>Diseñador</span></li>
-                        <li>Tecnología - <span>HTML - CSS</span></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="work-card mix software">
-                <img src="" alt="" class="work-img">
-                <h3 class="work-title">Lorem ipsum</h3>
-                <span class="work-button">Demo
-                    <i class='bx bx-right-arrow-alt work-button-icon'></i>
-                </span>
-                <div class="portfolio-item-details">
-                    <h3 class="details-title">Lorem ipsum dolor</h3>
-                    <p class="details-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptatibus doloremque iste.</p>
-                    <ul class="details-info">
-                        <li>Fecha - <span>Junio 2023</span></li>
-                        <li>Rol - <span>Diseñador</span></li>
-                        <li>Tecnología - <span>HTML - CSS</span></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="work-card mix design">
-                <img src="" alt="" class="work-img">
-                <h3 class="work-title">Lorem ipsum</h3>
-                <span class="work-button">Demo
-                    <i class='bx bx-right-arrow-alt work-button-icon'></i>
-                </span>
-                <div class="portfolio-item-details">
-                    <h3 class="details-title">Lorem ipsum dolor</h3>
-                    <p class="details-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptatibus doloremque iste.</p>
-                    <ul class="details-info">
-                        <li>Fecha - <span>Junio 2023</span></li>
-                        <li>Rol - <span>Diseñador</span></li>
-                        <li>Tecnología - <span>HTML - CSS</span></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="work-card mix web">
-                <img src="" alt="" class="work-img">
-                <h3 class="work-title">Lorem ipsum</h3>
-                <span class="work-button">Demo
-                    <i class='bx bx-right-arrow-alt work-button-icon'></i>
-                </span>
-                <div class="portfolio-item-details">
-                    <h3 class="details-title">Lorem ipsum dolor</h3>
-                    <p class="details-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptatibus doloremque iste.</p>
-                    <ul class="details-info">
-                        <li>Fecha - <span>Junio 2023</span></li>
-                        <li>Rol - <span>Diseñador</span></li>
-                        <li>Tecnología - <span>HTML - CSS</span></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="work-card mix software">
-                <img src="" alt="" class="work-img">
-                <h3 class="work-title">Lorem ipsum</h3>
-                <span class="work-button">Demo
-                    <i class='bx bx-right-arrow-alt work-button-icon'></i>
-                </span>
-                <div class="portfolio-item-details">
-                    <h3 class="details-title">Lorem ipsum dolor</h3>
-                    <p class="details-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptatibus doloremque iste.</p>
-                    <ul class="details-info">
-                        <li>Fecha - <span>Junio 2023</span></li>
-                        <li>Rol - <span>Diseñador</span></li>
-                        <li>Tecnología - <span>HTML - CSS</span></li>
-                    </ul>
-                </div>
-            </div>
-            -->
         </div>
     </section>
     <!-- Portfolio popup -->

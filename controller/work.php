@@ -2,8 +2,8 @@
     /*TODO: Llamando a cadena de Conexion */
     require_once("../config/conexion.php");
     /*TODO: Llamando a la clase */
-    require_once("../models/Estudio.php");
-    $estudio = new Estudio();
+    require_once("../models/Work.php");
+    $work = new Work();
 
     /*TODO: Opcion de solicitud de controller */
     switch($_GET["opc"]){
@@ -11,10 +11,10 @@
 
         /*TODO: Mostrar informacion de l usuario en la vista perfil */
         case "mostrar":
-            $datos = $estudio->get_curriculumXid($_POST["est_id"]);
+            $datos = $work->get_workXid($_POST["work_id"]);
             if(is_array($datos)==true and count($datos)<>0){
                 foreach($datos as $row){
-                    $output["est_id"] = $row["est_id"];
+                    $output["work_id"] = $row["work_id"];
                     $output["est_titulo"] = $row["est_titulo"];
                     $output["est_lugar"] = $row["est_lugar"];
                     $output["est_anno"] = $row["est_anno"];
@@ -25,33 +25,30 @@
             break;
         /*TODO: Guardar y editar cuando se tenga el ID */
         case "guardaryeditar":
-            if(empty($_POST["est_id"])){
-                $estudio->insert_curriculum($_POST["est_titulo"],$_POST["est_lugar"],$_POST["est_anno"],$_POST["est_tipo"]);
+            if(empty($_POST["work_id"])){
+                $work->insert_work($_POST["fil_id"],$_POST["work_img"],$_POST["work_titulo"],$_POST["work_descripcion"],$_POST["work_fecha"],$_POST["work_rol"],$_POST["work_tecnologia"]);
             }else{
-                $estudio->update_curriculum($_POST["est_id"],$_POST["est_titulo"],$_POST["est_lugar"],$_POST["est_anno"],$_POST["est_tipo"]);
+                $work->update_work($_POST["work_id"],$_POST["fil_id"],$_POST["work_img"],$_POST["work_titulo"],$_POST["work_descripcion"],$_POST["work_fecha"],$_POST["work_rol"],$_POST["work_tecnologia"]);
             }
             break;
         /*TODO: Eliminar segun ID */
         case "eliminar":
-            $estudio->delete_curriculum($_POST["est_id"]);
+            $work->delete_work($_POST["work_id"]);
             break;
         /*TODO:  Listar toda la informacion segun formato de datatable */
         case "listar":
-            $datos=$estudio->get_curriculum();
+            $datos=$work->get_works();
             $data= Array();
             foreach($datos as $row){
                 $sub_array = array();
-                $sub_array[] = $row["est_titulo"];
-                $sub_array[] = $row["est_lugar"];
-                $sub_array[] = $row["est_anno"];
-                if($row["est_tipo"] == "E"){
-                    $sub_array[] = "Educación";
-                }else{
-                    $sub_array[] = "Cursos";
-                }
+                $sub_array[] = $row["fil_enlace"];
+                $sub_array[] = $row["work_titulo"];
+                $sub_array[] = $row["work_fecha"];
+                $sub_array[] = $row["work_rol"];
+                $sub_array[] = $row["work_tecnologia"];
                 
-                $sub_array[] = '<button type="button" onClick="editar('.$row["est_id"].');"  id="'.$row["est_id"].'"class="btn btn-outline-warning btn-icon"><div><i class="fa fa-edit"></i></div></button>';
-                $sub_array[] = '<button type="button" onClick="eliminar('.$row["est_id"].');"  id="'.$row["est_id"].'"class="btn btn-outline-danger btn-icon"><div><i class="fa fa-close"></i></div></button>';
+                $sub_array[] = '<button type="button" onClick="editar('.$row["work_id"].');"  id="'.$row["work_id"].'"class="btn btn-outline-warning btn-icon"><div><i class="fa fa-edit"></i></div></button>';
+                $sub_array[] = '<button type="button" onClick="eliminar('.$row["work_id"].');"  id="'.$row["work_id"].'"class="btn btn-outline-danger btn-icon"><div><i class="fa fa-close"></i></div></button>';
                 $data[] = $sub_array;
             }
 

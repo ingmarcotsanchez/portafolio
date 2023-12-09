@@ -14,6 +14,7 @@
             $datos = $social_media->get_socialMediaXid($_POST["socmed_id"]);
             if(is_array($datos)==true and count($datos)<>0){
                 foreach($datos as $row){
+                    $output["socmed_id"] = $row["socmed_id"];
                     $output["socmed_icono"] = $row["socmed_icono"];
                     $output["socmed_url"] = $row["socmed_url"];
                 }

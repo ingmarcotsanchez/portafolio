@@ -9,6 +9,28 @@
             return $resultado=$sql->fetchAll();
         }
 
+        public function get_works(){
+            $social = parent::conexion();
+            parent::set_names();
+            $sql="SELECT
+            work.work_id,
+            filtros.fil_id,
+            filtros.fil_titulo,
+            filtros.fil_enlace,
+            work.work_img,
+            work.work_titulo,
+            work.work_descripcion,
+            work.work_fecha,
+            work.work_rol,
+            work.work_tecnologia,
+            work.est
+            FROM work
+            INNER JOIN filtros on work.fil_id = filtros.fil_id";
+            $sql=$social->prepare($sql);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+        }
+
         public function get_workXid($work_id){
             $social = parent::conexion();
             parent::set_names();
