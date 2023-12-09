@@ -784,7 +784,7 @@ section {
 
 .contact-container {
   display: grid;
-  grid-template-columns: 200px 640px;
+  grid-template-columns: repeat(1, 1fr);
   -moz-column-gap: 3rem;
        column-gap: 3rem;
   justify-content: center;
@@ -792,15 +792,19 @@ section {
 }
 
 .contact-info {
-  display: grid;
-  row-gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .contact-card {
+  width: 300px;
   padding: 1rem;
   background-color: #0b121e;
   border-radius: 0.5rem;
   text-align: center;
+  margin-bottom: 40px;
 }
 
 .contact-card-icon {

@@ -1,9 +1,9 @@
 var usu_id = $('#usu_idx').val();
 
 function init(){
-    $("#socialMedia_form").on("submit",function(e){
+    /*$("#socialMedia_form").on("submit",function(e){
         guardaryeditar(e);
-    });
+    });*/
 
 }
 

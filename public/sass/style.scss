@@ -745,20 +745,24 @@ section{
 }
 .contact-container{
     display: grid;
-    grid-template-columns: 200px 640px;
+    grid-template-columns: repeat(1, 1fr);
     column-gap: 3rem;
     justify-content: center;
     align-items: center;
 }
 .contact-info{
-    display: grid;
-    row-gap: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
 }
 .contact-card{
+    width: 300px;
     padding: 1rem;
     background-color: $fondo2;
     border-radius: .5rem;
     text-align: center;
+    margin-bottom: 40px;
 }
 .contact-card-icon{
     font-size: 1.8rem;

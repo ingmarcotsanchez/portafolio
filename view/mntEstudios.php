@@ -38,17 +38,15 @@
             <p></p>
 
             <div class="table-wrapper"></div>
-                <table id="cursos_data" class="table display responsive nowrap">
+                <table id="estudio_data" class="table display responsive wrap">
                 <thead>
                     <tr>
-                    <th class="wd-15p">Categoria</th>
-                    <th class="wd-15p">Nombre</th>
-                    <th class="wd-15p">Fech.Inicio</th>
-                    <th class="wd-20p">Fech.Fin</th>
-                    <th class="wd-15p">Instructor</th>
-                    <th class="wd-10p"></th>
-                    <th class="wd-10p"></th>
-                    <th class="wd-10p"></th>
+                      <th class="wd-15p">Título</th>
+                      <th class="wd-15p">Lugar</th>
+                      <th class="wd-15p">Año</th>
+                      <th class="wd-20p">Tipo</th>
+                      <th class="wd-10p"></th>
+                      <th class="wd-10p"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -61,11 +59,10 @@
       </div>
     </div>
 
-    <?php require_once("modalmantenimiento.php"); ?>
-    <?php require_once("modalfile.php"); ?>
+    <?php require_once("mntModalestudios.php"); ?>
 
     <?php require_once("modulos/MainJs.php"); ?>
-    <script type="text/javascript" src="adminmntcurso.js"></script>
+    <script type="text/javascript" src="js/mntEstudios.js"></script>
   </body>
 </html>
 <?php

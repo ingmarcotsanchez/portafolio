@@ -25,6 +25,7 @@
     <!-- Iconos -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
+    <script src="public/js/fullcalendar.js"></script>
 </head>
 <body>
     <header class="header">
@@ -598,7 +599,7 @@
                 </div>
             </div>
      
-            <div class="contact-content">
+            <div id="calendar">
                
             </div>
         </div>
@@ -611,8 +612,9 @@
             <a href="#"><i class="bx bx-up-arrow-alt"></i></a>
         </div>
     </footer>
+    
     <script src="public/js/mixitup.min.js"></script>
-    <script src="public/js/fullcalendar.js"></script>
+    
     <script src="public/js/script.js"></script>
 </body>
 </html>
