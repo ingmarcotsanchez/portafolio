@@ -63,7 +63,7 @@
             <p>Soy una persona con más de 10 años de experiencia docente, me apaciona la parte FrontEnd, me gusta aprender diferentes temas en esta área para transmitirlas a mis estudiantes.</p>
             <div class="btn-box">
                 <a href="#" class="btn" download="document/CV.pdf"><i class='bx bx-download'></i> Download CV</a>
-                <a href="#" class="btn">Agendar cita</a>
+                <a href="#" class="btn">CVLAC</a>
             </div>
         </div>
         <div class="home-social"><!--social_media-->
@@ -463,7 +463,7 @@
         </div>
     </div>
     <section class="contact" id="contact">
-        <h2 class="heading">Agendar <span>Reunión!</span></h2>
+        <h2 class="heading">Contácta <span>Me!</span></h2>
         <div class="contact-container">
             <div class="contact-info">
                 <div class="contact-card">
@@ -484,11 +484,37 @@
                     </span>
                 </div>
             </div>
-     
-            <div id="calendar">
-               
+            <div class="contact-form">
+                <form class="main-box" method="post" id="contact_form">
+                    <input type="hidden" id="cli_id" name="cli_id">
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-id-card'></i></span>
+                        <input type="text" id="cli_nombre" name="cli_nombre" required>
+                        <label for="cli_nombre">Nombres y Apellidos</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-phone-call'></i></span>
+                        <input type="text" id="cli_telef" name="cli_telef" required>
+                        <label for="cli_telef">Celular</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-envelope'></i></span>
+                        <input type="email" id="cli_correo" name="cli_correo" required>
+                        <label for="cli_correo">Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-archive-out'></i></span>
+                        <input type="text" id="cli_asunto" name="cli_asunto" required>
+                        <label for="cli_asunto">Asunto</label>
+                    </div>
+                    <div class="input-area">
+                        <textarea id="cli_mensaje" name="cli_mensaje" cols="124" rows="5" placeholder="Comentarios"></textarea>
+                    </div>
+                    <button type="submit" name="action" id="#" value="add" class="btn btn-form">Enviar</button>
+                </form>
             </div>
         </div>
+        
     </section>
     <footer class="footer">
         <div class="footer-text">
