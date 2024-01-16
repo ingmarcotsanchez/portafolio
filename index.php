@@ -411,7 +411,7 @@
             <div class="work-card mix <?php echo $wk[$i]["fil_enlace"] ?>">
                 <img src="public/images/proyectos/<?php echo $wk[$i]["work_img"] ?>" alt="imagen" class="work-img">
                 <h3 class="work-title"><?php echo $wk[$i]["work_titulo"] ?></h3>
-                <span class="work-button">Demo
+                <span class="work-button">Ver más
                     <i class='bx bx-right-arrow-alt work-button-icon'></i>
                 </span>
                 <div class="portfolio-item-details">
@@ -431,6 +431,7 @@
                             </span>
                         </li>
                         <li>Tecnología - <span><?php echo $wk[$i]["work_tecnologia"] ?></span></li>
+                        <li>URL - <span><?php echo $wk[$i]["work_url"] ?></span></li>
                     </ul>
                 </div>
             </div>
@@ -456,6 +457,7 @@
                             <li>Fecha - <span>Junio 2023</span></li>
                             <li>Rol - <span>Diseñador</span></li>
                             <li>Tecnología - <span>HTML - CSS</span></li>
+                            <li>URL - <span>HTML - CSS</span></li>
                         </ul>
                     </div>
                 </div>

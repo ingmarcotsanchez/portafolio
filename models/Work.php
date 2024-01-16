@@ -23,6 +23,7 @@
             work.work_fecha,
             work.work_rol,
             work.work_tecnologia,
+            work.work_url,
             work.est
             FROM work
             INNER JOIN filtros on work.fil_id = filtros.fil_id";
@@ -45,6 +46,7 @@
             work.work_fecha,
             work.work_rol,
             work.work_tecnologia,
+            work.work_url,
             work.est
             FROM work
             INNER JOIN filtros on work.fil_id = filtros.fil_id
@@ -65,10 +67,10 @@
             return $resultado=$sql->fetchAll();
         }
 
-        public function insert_work($fil_id,$work_img,$work_titulo,$work_descripcion,$work_fecha,$work_rol,$work_tecnologia){
+        public function insert_work($fil_id,$work_img,$work_titulo,$work_descripcion,$work_fecha,$work_rol,$work_tecnologia, $work_url){
             $social = parent::conexion();
             parent::set_names();
-            $sql="INSERT INTO work (work_id,fil_id,work_img,work_titulo,work_descripcion,work_fecha,work_rol,work_tecnologia,est) VALUES(NULL,?,?,?,?,?,?,?,1)";
+            $sql="INSERT INTO work (work_id,fil_id,work_img,work_titulo,work_descripcion,work_fecha,work_rol,work_tecnologia,work_url,est) VALUES(NULL,?,?,?,?,?,?,?,?,1)";
             $sql=$social->prepare($sql);
             $sql->bindValue(1, $fil_id);
             $sql->bindValue(2, $work_img);
@@ -77,11 +79,12 @@
             $sql->bindValue(5, $work_fecha);
             $sql->bindValue(6, $work_rol);
             $sql->bindValue(7, $work_tecnologia);
+            $sql->bindValue(8, $work_url);
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
 
-        public function update_work($work_id,$fil_id,$work_img,$work_titulo,$work_descripcion,$work_fecha,$work_rol,$work_tecnologia){
+        public function update_work($work_id,$fil_id,$work_img,$work_titulo,$work_descripcion,$work_fecha,$work_rol,$work_tecnologia,$work_url){
             $social = parent::conexion();
             parent::set_names();
             $sql="UPDATE work 
@@ -92,7 +95,8 @@
                         work_descripcion = ?,
                         work_fecha = ?,
                         work_rol = ?,
-                        work_tecnologia = ?
+                        work_tecnologia = ?,
+                        work_url = ?
                     WHERE
                         work_id = ?";
             $sql=$social->prepare($sql);
@@ -103,7 +107,8 @@
             $sql->bindValue(5, $work_fecha);
             $sql->bindValue(6, $work_rol);
             $sql->bindValue(7, $work_tecnologia);
-            $sql->bindValue(8, $work_id);
+            $sql->bindValue(8, $work_url);
+            $sql->bindValue(9, $work_id);
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }

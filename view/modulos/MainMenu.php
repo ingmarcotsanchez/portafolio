@@ -62,10 +62,17 @@
       </div>
     </a>
 
+    <a href="mntclientes.php" class="br-menu-link">
+      <div class="br-menu-item">
+        <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-24"></i>
+        <span class="menu-item-label">Mis Clientes</span>
+      </div>
+    </a>
+
     
   
     
-
+    <label class="sidebar-label pd-x-15 mg-t-20">Salir</label>
     <a href="/Portafolio/view/modulos/Logout.php" class="br-menu-link">
       <div class="br-menu-item">
         <i class="menu-item-icon icon ion-power tx-20"></i>

@@ -104,6 +104,7 @@ function editar(work_id){
         $('#work_fecha').val(data.work_fecha);
         $('#work_rol').val(data.work_rol);
         $('#work_tecnologia').val(data.work_tecnologia);
+        $('#work_url').val(data.work_url);
     });
     $('#titulo_modal').html('Editar Trabajo');
     $('#modalcrearWorks').modal('show');

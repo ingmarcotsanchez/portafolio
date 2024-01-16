@@ -22,6 +22,7 @@
                     $output["work_fecha"] = $row["work_fecha"];
                     $output["work_rol"] = $row["work_rol"];
                     $output["work_tecnologia"] = $row["work_tecnologia"];
+                    $output["work_url"] = $row["work_url"];
                 }
                 echo json_encode($output);
             }
@@ -46,11 +47,11 @@
                      $errMSG = "Sorry, your file is too large.";
                     }
                     if(!isset($errMSG)){
-                        $work->insert_work($_POST["fil_id"],$imagen,$_POST["work_titulo"],$_POST["work_descripcion"],$_POST["work_fecha"],$_POST["work_rol"],$_POST["work_tecnologia"]);
+                        $work->insert_work($_POST["fil_id"],$imagen,$_POST["work_titulo"],$_POST["work_descripcion"],$_POST["work_fecha"],$_POST["work_rol"],$_POST["work_tecnologia"],$_POST["work_url"]);
                     }
                 }
             }else{
-                $work->update_work($_POST["work_id"],$_POST["fil_id"],$_POST["work_img"],$_POST["work_titulo"],$_POST["work_descripcion"],$_POST["work_fecha"],$_POST["work_rol"],$_POST["work_tecnologia"]);
+                $work->update_work($_POST["work_id"],$_POST["fil_id"],$_POST["work_img"],$_POST["work_titulo"],$_POST["work_descripcion"],$_POST["work_fecha"],$_POST["work_rol"],$_POST["work_tecnologia"],$_POST["work_url"]);
             }
             break;
         /*TODO: Eliminar segun ID */
@@ -77,6 +78,8 @@
                 }
                 
                 $sub_array[] = $row["work_tecnologia"];
+
+                $sub_array[] = $row["work_url"];
                 
                 $sub_array[] = '<button type="button" onClick="editar('.$row["work_id"].');"  id="'.$row["work_id"].'"class="btn btn-outline-warning btn-icon"><div><i class="fa fa-edit"></i></div></button>';
                 $sub_array[] = '<button type="button" onClick="eliminar('.$row["work_id"].');"  id="'.$row["work_id"].'"class="btn btn-outline-danger btn-icon"><div><i class="fa fa-close"></i></div></button>';
