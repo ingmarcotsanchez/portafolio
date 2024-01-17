@@ -1,30 +1,25 @@
 var usu_id = $('#usu_idx').val();
 
+function init(){
+    
+}
 $(document).ready(function(){
 
-    $.post("../../controller/usuario.php?op=total", { usu_id : usu_id }, function (data) {
-        data = JSON.parse(data);
-        $('#lbltotal').html(data.total);
-    });
-
-    $('#cursos_data').DataTable({
+    $('#cliente_data').DataTable({
         "aProcessing": true,
         "aServerSide": true,
         dom: 'Bfrtip',
         buttons: [
-            'copyHtml5',
             'excelHtml5',
-            'csvHtml5',
         ],
         "ajax":{
-            url:"../../controller/usuario.php?op=listar_cursos_top10",
-            type:"post",
-            data:{usu_id:usu_id},
+            url:"./../controller/cliente.php?opc=top5",
+            type:"post"
         },
         "bDestroy": true,
         "responsive": true,
         "bInfo":true,
-        "iDisplayLength": 10,
+        "iDisplayLength": 15,
         "order": [[ 0, "desc" ]],
         "language": {
             "sProcessing":     "Procesando...",
@@ -54,7 +49,4 @@ $(document).ready(function(){
 
 });
 
-function certificado(curd_id){
-    console.log(curd_id);
-    window.open('../Certificado/index.php?curd_id='+ curd_id +'','_blank');
-}
+init();

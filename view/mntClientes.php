@@ -40,7 +40,7 @@
             <p></p>
 
             <div class="table-wrapper"></div>
-                <table id="clientes_data" class="table display responsive wrap">
+                <table id="cliente_data" class="table display responsive wrap">
                 <thead>
                     <tr>
                     <th class="wd-15p">Nombre</th>
@@ -62,12 +62,10 @@
       </div>
     </div>
 
-    <?php require_once("mntModalcliente.php"); ?>
+    <?php require_once("mntModalclientes.php"); ?>
 
     <?php require_once("modulos/MainJs.php"); ?>
     <script type="text/javascript" src="js/mntclientes.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
   </body>
 </html>
 <?php

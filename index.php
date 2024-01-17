@@ -537,5 +537,6 @@
     <script src="public/js/mixitup.min.js"></script>
     
     <script src="public/js/script.js"></script>
+    <script src="view/js/index.js"></script>
 </body>
 </html>

@@ -77,81 +77,17 @@
               <div class="card-header bg-transparent pd-20">
                 <h6 class="card-title tx-uppercase tx-12 mg-b-0">TOP 10 Clientes</h6>
               </div><!-- card-header -->
-              <table class="table table-responsive mg-b-0 tx-12">
+              <table id="cliente_data" class="table table-responsive mg-b-0 tx-12">
                 <thead>
                   <tr class="tx-10">
-                    <th class="wd-10p pd-y-5">&nbsp;</th>
-                    <th class="pd-y-5">Nombre</th>
+                    <th class="wd-10p pd-y-5">Nombre</th>
+                    <th class="pd-y-5">Teléfono</th>
                     <th class="pd-y-5">Estado</th>
                     <th class="pd-y-5">Fecha</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td class="pd-l-20">
-                      <img src="http://via.placeholder.com/280x280" class="wd-36 rounded-circle" alt="Image">
-                    </td>
-                    <td>
-                      <a href="" class="tx-inverse tx-14 tx-medium d-block">Mark K. Peters</a>
-                      <span class="tx-11 d-block">TRANSID: 1234567890</span>
-                    </td>
-                    <td class="tx-12">
-                      <span class="square-8 bg-success mg-r-5 rounded-circle"></span> Email verified
-                    </td>
-                    <td>Just Now</td>
-                  </tr>
-                  <tr>
-                    <td class="pd-l-20">
-                      <img src="http://via.placeholder.com/280x280" class="wd-36 rounded-circle" alt="Image">
-                    </td>
-                    <td>
-                      <a href="" class="tx-inverse tx-14 tx-medium d-block">Karmen F. Brown</a>
-                      <span class="tx-11 d-block">TRANSID: 1234567890</span>
-                    </td>
-                    <td class="tx-12">
-                      <span class="square-8 bg-warning mg-r-5 rounded-circle"></span> Pending verification
-                    </td>
-                    <td>Apr 21, 2017 8:34am</td>
-                  </tr>
-                  <tr>
-                    <td class="pd-l-20">
-                      <img src="http://via.placeholder.com/280x280" class="wd-36 rounded-circle" alt="Image">
-                    </td>
-                    <td>
-                      <a href="" class="tx-inverse tx-14 tx-medium d-block">Gorgonio Magalpok</a>
-                      <span class="tx-11 d-block">TRANSID: 1234567890</span>
-                    </td>
-                    <td class="tx-12">
-                      <span class="square-8 bg-success mg-r-5 rounded-circle"></span> Purchased success
-                    </td>
-                    <td>Apr 10, 2017 4:40pm</td>
-                  </tr>
-                  <tr>
-                    <td class="pd-l-20">
-                      <img src="http://via.placeholder.com/280x280" class="wd-36 rounded-circle" alt="Image">
-                    </td>
-                    <td>
-                      <a href="" class="tx-inverse tx-14 tx-medium d-block">Ariel T. Hall</a>
-                      <span class="tx-11 d-block">TRANSID: 1234567890</span>
-                    </td>
-                    <td class="tx-12">
-                      <span class="square-8 bg-warning mg-r-5 rounded-circle"></span> Payment on hold
-                    </td>
-                    <td>Apr 02, 2017 6:45pm</td>
-                  </tr>
-                  <tr>
-                    <td class="pd-l-20">
-                      <img src="http://via.placeholder.com/280x280" class="wd-36 rounded-circle" alt="Image">
-                    </td>
-                    <td>
-                      <a href="" class="tx-inverse tx-14 tx-medium d-block">John L. Goulette</a>
-                      <span class="tx-11 d-block">TRANSID: 1234567890</span>
-                    </td>
-                    <td class="tx-12">
-                      <span class="square-8 bg-pink mg-r-5 rounded-circle"></span> Account deactivated
-                    </td>
-                    <td>Mar 30, 2017 10:30am</td>
-                  </tr>
+                  
                 </tbody>
               </table>
               <div class="card-footer tx-12 pd-y-15 bg-transparent">

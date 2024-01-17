@@ -11,7 +11,7 @@ function guardaryeditar(e){
     
     console.log("prueba");
     e.preventDefault();
-    var formData = new FormData($("#clientes_form")[0]);
+    var formData = new FormData($("#cliente_form")[0]);
     console.log(formData);
     $.ajax({
         url: "/portafolio/controller/cliente.php?opc=guardaryeditar",
@@ -20,7 +20,7 @@ function guardaryeditar(e){
         contentType: false,
         processData: false,
         success: function(data){
-            $('#clientes_data').DataTable().ajax.reload();
+            $('#cliente_data').DataTable().ajax.reload();
             $('#modalcrearClientes').modal('hide');
             Swal.fire({
                 title: 'Correcto!',
@@ -34,7 +34,7 @@ function guardaryeditar(e){
 }
 
 $(document).ready(function(){
-    $('#clientes_data').DataTable({
+    $('#cliente_data').DataTable({
         "aProcessing": true,
         "aServerSide": true,
         dom: 'Bfrtip',
@@ -79,7 +79,7 @@ $(document).ready(function(){
 });
 
 function editar(cli_id){
-    $.post("./../controller/cliente.php?opc=mostrar",{cli_id:cli_id},function (data){
+    $.post("/portafolio/controller/cliente.php?opc=mostrar",{cli_id:cli_id},function (data){
         data = JSON.parse(data);
         console.log(data);
         $('#cli_id').val(data.cli_id);

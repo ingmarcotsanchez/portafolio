@@ -5,7 +5,7 @@
                 <h6 id="titulo_modal" class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold"></h6>
             </div>
             <!-- Formulario Mantenimiento -->
-            <form method="post" id="clientes_form">
+            <form method="post" id="cliente_form">
                 <div class="modal-body">
                     <input type="hidden" name="cli_id" id="cli_id">
                     <div class="col-lg-12">
