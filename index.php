@@ -63,7 +63,7 @@
             <p>Soy una persona con más de 10 años de experiencia docente, me apaciona la parte FrontEnd, me gusta aprender diferentes temas en esta área para transmitirlas a mis estudiantes.</p>
             <div class="btn-box">
                 <a href="#" class="btn" download="document/CV.pdf"><i class='bx bxs-file-pdf'></i> Download CV</a>
-                <a href="#" class="btn"><i class='bx bxs-file-html'></i> CVLAC</a>
+                <a href="https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001475324" class="btn" target="_blank"><i class='bx bxs-file-html'></i> CVLAC</a>
             </div>
         </div>
         <div class="home-social"><!--social_media-->
@@ -71,7 +71,7 @@
                 for($i=0;$i<sizeof($soc);$i++):
             ?>
 
-            <a href="<?php echo $soc[$i]["socmed_url"] ?>"><i class='bx bxl-<?php echo $soc[$i]["socmed_icono"] ?>'></i></a>
+            <a href="<?php echo $soc[$i]["socmed_url"] ?>" target="_blank"><i class='bx bxl-<?php echo $soc[$i]["socmed_icono"] ?>'></i></a>
             
             <?php
                 endfor;
@@ -102,13 +102,10 @@
                         <li>
                             <b>Cargo Actual:</b>Profesor
                         </li>
-                        <li>
-                            <b>Cvlac</b><a href="#" class="cvlac" download="document/CV.pdf"><i class='bx bx-download'></i>Ver más</a>
-                        </li>
                     </ul>
                 </div>
                 <div class="info-intereses">
-                    <h3>Mis Intereses</h3>
+                    <h3>Mis Pasatiempos</h3>
                     <div class="content-intereses">
                         <div class="intereses">
                             <i class='bx bx-video-recording'></i>
