@@ -41,7 +41,7 @@
 </head>
 <body>
     <header class="header">
-        <a href="#" class="logo">Marco Sánchez<span class="animate" style="--i:1"></span></a>
+        <a href="#" class="logo"><img src="public/images/logo.png" alt=""><span class="animate" style="--i:1"></span></a>
         <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2"></span></div>
         <nav class="navbar">
             <a href="#home" class="active">Inicio</a>
@@ -62,8 +62,8 @@
     
             <p>Soy una persona con más de 10 años de experiencia docente, me apaciona la parte FrontEnd, me gusta aprender diferentes temas en esta área para transmitirlas a mis estudiantes.</p>
             <div class="btn-box">
-                <a href="#" class="btn" download="document/CV.pdf"><i class='bx bx-download'></i> Download CV</a>
-                <a href="#" class="btn">CVLAC</a>
+                <a href="#" class="btn" download="document/CV.pdf"><i class='bx bxs-file-pdf'></i> Download CV</a>
+                <a href="#" class="btn"><i class='bx bxs-file-html'></i> CVLAC</a>
             </div>
         </div>
         <div class="home-social"><!--social_media-->
@@ -195,6 +195,16 @@
                         </div>
                         <div class="skills-data">
                             <div class="skills-titles">
+                                <h3 class="skills-name">SASS</h3>
+                                <span class="skills-number">80%</span>
+                            </div>
+
+                            <div class="skills-bar">
+                                <span class="skills-percentage" style="width: 80%;"></span>
+                            </div>
+                        </div>
+                        <div class="skills-data">
+                            <div class="skills-titles">
                                 <h3 class="skills-name">JS</h3>
                                 <span class="skills-number">40%</span>
                             </div>
@@ -206,11 +216,11 @@
                         <div class="skills-data">
                             <div class="skills-titles">
                                 <h3 class="skills-name">BOOSTRAP</h3>
-                                <span class="skills-number">80%</span>
+                                <span class="skills-number">85%</span>
                             </div>
 
                             <div class="skills-bar">
-                                <span class="skills-percentage" style="width: 80%;"></span>
+                                <span class="skills-percentage" style="width: 85%;"></span>
                             </div>
                         </div>
                     </div>
@@ -431,7 +441,7 @@
                             </span>
                         </li>
                         <li>Tecnología - <span><?php echo $wk[$i]["work_tecnologia"] ?></span></li>
-                        <li>URL - <span><?php echo $wk[$i]["work_url"] ?></span></li>
+                        <li>URL - <a href="<?php echo $wk[$i]["work_url"] ?>" target="_blank"><span class="span-url"><?php echo $wk[$i]["work_url"] ?></span></a></li>
                     </ul>
                 </div>
             </div>
