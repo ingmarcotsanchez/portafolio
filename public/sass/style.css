@@ -87,6 +87,10 @@ body {
   font-weight: 500;
 }
 
+.logo img {
+  width: 200px;
+}
+
 .navbar {
   position: relative;
 }
@@ -203,19 +207,20 @@ section {
   letter-spacing: 0.1rem;
   z-index: 1;
   overflow: hidden;
+  color: #fff;
   transition: 0.5s;
 }
 .btn-box .btn:hover {
-  color: #0c96e1;
+  color: #fff;
 }
 
 .btn-box .btn:nth-child(2) {
   background: transparent;
-  color: #0c96e1;
+  color: #fff;
 }
 
 .btn-box .btn:nth-child(2):hover {
-  color: #0c0c0d;
+  color: #fff;
 }
 
 .btn-box .btn:nth-child(2)::before {
@@ -723,10 +728,10 @@ section {
 }
 
 .portfolio-popup-inner {
-  width: 900px;
+  width: 1000px;
   border-radius: 0.5rem;
   background-color: #0c0c0d;
-  padding: 2.5rem;
+  padding: 2rem;
   position: relative;
 }
 
@@ -734,8 +739,8 @@ section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
 }
 
 .portfolio-popup-close {
@@ -749,7 +754,7 @@ section {
 
 .portfolio-popup-img {
   border-radius: 0.5rem;
-  width: 500px;
+  width: 400px;
 }
 
 .portfolio-popup-subtitle {
@@ -766,6 +771,7 @@ section {
 .details-description {
   font-family: "Raleway", sans-serif;
   margin-bottom: 1rem;
+  width: 450px;
 }
 
 .details-info {
@@ -777,6 +783,9 @@ section {
 }
 .details-info span {
   font-family: "Raleway", sans-serif;
+}
+.details-info .span-url {
+  color: #0c96e1;
 }
 
 .contact {
@@ -1137,9 +1146,36 @@ textarea {
   html {
     font-size: 60%;
   }
+  .home {
+    justify-content: center;
+  }
+  .home-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
   .home-content h1 {
     display: flex;
     flex-direction: column;
+  }
+  .home-content p {
+    font-size: 1.3rem;
+  }
+  .home-content .btn-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 3rem;
+  }
+  .home-content .btn-box .btn {
+    width: 20rem;
+    height: 80%;
+    margin-right: 0px;
+    font-size: 1.8rem;
+    color: #fff;
   }
   .home-social {
     width: 160px;
@@ -1151,158 +1187,181 @@ textarea {
   .about {
     padding: 0 3%;
   }
+  .about .content-about p {
+    text-align: center;
+  }
+  .about .content-about .content {
+    display: flex;
+    flex-direction: column;
+  }
+  .about .content-about .content .info-personal, .about .content-about .content .info-intereses {
+    width: 100%;
+    font-family: "Raleway", sans-serif;
+  }
+  .about .content-about .content .info-personal h3, .about .content-about .content .info-intereses h3 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  .about .content-about .content .info-personal ul, .about .content-about .content .info-intereses ul {
+    list-style: none;
+  }
+  .about .content-about .content .info-personal ul li, .about .content-about .content .info-intereses ul li {
+    margin: 12px 10px;
+    font-size: 1.5rem;
+  }
+  .about .content-about .content .info-personal ul li b, .about .content-about .content .info-intereses ul li b {
+    width: 250px;
+    font-size: 1.5rem;
+  }
+  .about .content-about .content .info-personal .content-intereses, .about .content-about .content .info-intereses .content-intereses {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .about .content-about .content .info-personal .content-intereses .intereses, .about .content-about .content .info-intereses .content-intereses .intereses {
+    width: 100px;
+    height: 100px;
+  }
   .info-personal, .info-intereses {
     width: 100%;
   }
-  .content-row {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    margin-left: 0;
-  }
-  .content-col .item {
-    width: 100%;
+  .skills-bar,
+  .skills-percentage {
+    width: 400px;
   }
   .curriculum {
     padding: 0;
   }
+  .curriculum .content-row {
+    width: 100%;
+  }
+  .curriculum .content-row .content-col {
+    width: 100%;
+  }
+  .curriculum .content-row .content-col .title {
+    font-size: 2rem;
+  }
+  .curriculum .content-row .content-col .item {
+    width: 100%;
+  }
+  .curriculum .content-row .content-col .item span {
+    font-size: 1.5rem;
+  }
   .work-container {
     grid-template-columns: 330px;
     row-gap: 3rem;
+  }
+  .work-container .work-button {
+    font-size: 1.5rem;
   }
   .contact-container {
     grid-template-columns: 330px;
     row-gap: 3rem;
   }
   .portfolio-popup-inner {
-    width: 400px;
-    margin-left: -80px;
+    width: 100%;
+    margin: 10px;
+    background-color: #0c0c0d;
+  }
+  .portfolio-popup-content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    -moz-column-gap: 0.5rem;
+         column-gap: 0.5rem;
+  }
+  .portfolio-popup-close {
+    font-size: 3.5rem;
+  }
+  .portfolio-popup-img {
+    width: 360px;
+    margin: 0 20px;
+  }
+  .portfolio-popup-subtitle {
+    font-size: 1.5rem;
+  }
+  .details-title {
+    font-size: 2rem;
+  }
+  .details-description {
+    width: auto;
+    font-size: 1.5rem;
+  }
+  .details-info {
+    list-style: none;
+  }
+  .details-info li {
+    font-size: 1.2rem;
+  }
+  .main-box {
+    display: flex;
+    flex-direction: column;
+  }
+  .main-box .input-box {
+    width: 100%;
+  }
+  .input-area textarea {
+    margin-left: 5px;
   }
 }
 @media (max-width: 462px) {
-  .home {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .home-content {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .home-content h1 {
-    font-size: 2rem;
-  }
-  .home-content .btn-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  .home-social a {
-    margin-right: 10px;
-  }
-  .about {
-    padding: 20px;
-    width: 90%;
-  }
-  .about .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  .about .content .info-personal,
-  .about .content .info-intereses {
-    width: 100%;
-  }
-  .about .content .info-intereses .content-intereses {
-    justify-content: center;
-  }
   .skills {
     padding: 0;
   }
-  .skills-container .skills-tabs .skills-header {
-    width: 100%;
-  }
-  .skills-container .skills-tabs .skills-header .skills-content {
-    width: 90%;
-    padding: 0;
+  .skills-header {
+    width: 400px;
   }
   .skills-list {
-    width: 100%;
+    padding: 40px;
   }
-  .skills-data {
-    padding: 0 10px;
-  }
-  .experience {
-    padding: 10px;
-  }
-  .experience .experience-row {
-    display: flex;
-    flex-direction: column;
-  }
-  .experience .experience-row .experience-column {
-    display: block;
-    width: 100%;
-  }
-  .experience .experience-row .experience-column .experience-box .experience-content {
-    width: 100%;
-  }
-  .work {
-    width: 100%;
-  }
-  .work-container {
-    padding: 10px 0;
-    width: 100%;
-    grid-template-columns: 300px;
-    row-gap: 1rem;
-  }
-  .portfolio-popup-inner {
+  .skills-bar,
+  .skills-percentage {
     width: 380px;
-    margin: 5px;
   }
-  .content-row {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  .curriculum {
+    padding: 0 19%;
+  }
+  .curriculum .content-curriculum {
     width: 100%;
+  }
+  .curriculum .content-curriculum .content-row {
+    flex-direction: column;
   }
   .curriculum .content-curriculum .content-row .content-col {
     width: 100%;
   }
-  .contact-container {
-    grid-template-columns: 300px;
-    row-gap: 3rem;
-    padding-bottom: 10px;
+  .curriculum .content-curriculum .content-row .content-col .item {
+    width: 100%;
   }
-  .footer {
-    flex-direction: column-reverse;
+  .curriculum .content-curriculum .content-row .content-col .item span {
+    font-size: 2rem;
   }
-  .footer p {
-    margin-top: 2rem;
-    text-align: center;
+  .curriculum .content-curriculum .content-row .content-col .item .conectord, .curriculum .content-curriculum .content-row .content-col .item .conectori {
+    display: none;
+  }
+  .curriculum .content-curriculum .content-row .education {
+    border-right: none;
+  }
+  .curriculum .content-curriculum .content-row .educationContinua {
+    border-left: none;
+  }
+  .portfolio-popup-img {
+    width: 350px;
+    margin: 0 10px 10px 10px;
   }
 }
 @media (max-width: 371px) {
-  .home {
-    justify-content: center;
+  .skills {
+    padding: 0;
   }
-  .home-content {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
+  .skills-header {
+    width: 350px;
   }
-  .home-content h1 {
-    font-size: 1rem;
+  .skills-list {
+    padding: 5px;
+  }
+  .skills-bar,
+  .skills-percentage {
+    width: 350px;
   }
 }
 @keyframes homeBgTexto {
