@@ -91,7 +91,7 @@
                 </tbody>
               </table>
               <div class="card-footer tx-12 pd-y-15 bg-transparent">
-                <a href=""><i class="fa fa-angle-down mg-r-5"></i>Ampliar información</a>
+                <a href="mntClientes.php"><i class="fa fa-angle-down mg-r-5"></i>Ampliar información</a>
               </div><!-- card-footer -->
             </div><!-- card -->
           </div><!-- col-6 -->
