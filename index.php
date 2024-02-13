@@ -58,7 +58,7 @@
     </header>
     <section class="home show-animate" id="home">
         <div class="home-content">
-            <h1 >Hola, Mi nombre es <span>Marco Sánchez Espinosa</span></h1>
+            <h1 >Hola, soy <span>Diseñador Web</span></h1>
     
             <p>Soy una persona con más de 10 años de experiencia docente, me apaciona la parte FrontEnd, me gusta aprender diferentes temas en esta área para transmitirlas a mis estudiantes.</p>
             <div class="btn-box">
@@ -94,13 +94,13 @@
                             <b>Celular</b>(+57) 321 461 4550
                         </li>
                         <li>
-                            <b>Email</b>ing.marcotsanchez@gmail.com
+                            <b>Email</b>marcotsancheze@gmail.com
                         </li>
                         <li>
                             <b>Dirección</b>Reserva de Peñalisa Creta
                         </li>
                         <li>
-                            <b>Cargo Actual:</b>Profesor
+                            <b>Cargo Actual:</b>Profesor Universitario
                         </li>
                     </ul>
                 </div>
@@ -109,7 +109,7 @@
                     <div class="content-intereses">
                         <div class="intereses">
                             <i class='bx bx-video-recording'></i>
-                            <span>Peliculas</span>
+                            <span>Películas</span>
                         </div>
                         <div class="intereses">
                             <i class='bx bxs-plane-alt'></i>
@@ -117,7 +117,7 @@
                         </div>
                         <div class="intereses">
                             <i class='bx bx-car'></i>
-                            <span>Automoviles</span>
+                            <span>Automóviles</span>
                         </div>
                         <div class="intereses">
                             <i class='bx bxs-music'></i>
@@ -535,7 +535,7 @@
     </footer>
     
     <script src="public/js/mixitup.min.js"></script>
-    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
     <script src="public/js/script.js"></script>
     <script src="view/js/index.js"></script>
 </body>
